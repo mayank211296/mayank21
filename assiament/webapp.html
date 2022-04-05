@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delicious Foods</title>
+    <style>
+      body {
+        background-color: lightcyan;
+      }
+      h1 {
+        text-align: center;
+        color: aqua;
+      }
+      h3 {color: black;
+           text-align: center;
+           padding-top: 15px;
+           font-size: 40px;}
+      nav ul li {
+        display: inline-block;
+        text-decoration:none;
+        text-align:left;
+        padding: 5px;
+        margin: 10px;
+        background-color: rgb(156, 243, 214);
+        border-radius: 0.5em;
+      }
+      li a {color:black}
+      nav li a:hover{
+        background-color: white;
+        border-radius: 0.2em ;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Welcome Delicious Foods</h1>
+    <h2>Some delicious foods which you likes to eat.</p>
+    <div>
+      <img
+        src="pizza.jpg"
+        alt="pizza"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+      <img
+        src="pizza1.jpg"
+        alt="pizza"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+      <img
+        src="noddle.jpg"
+        alt="noddle"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+      <img
+        src="burgar.jpg"
+        alt="burgar"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+    </div>
+    <hr style="color: cyan" />
+    <div>
+      <img
+        src="cake.jpg"
+        alt="cake"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+      <img
+        src="fired patato.jpg"
+        alt="patato"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+      <img
+        src="pasta.jpg"
+        alt="pasta"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+      <img
+        src="indianfood.jpg"
+        alt="cake"
+        style="width: 300px; height: 250px; padding: 10px; border-radius: 1.5em"
+      />
+    </div>
+    <div style="background-image: url(simple.jpg); background-size: cover; width: auto; height: 500px; margin:0px 100px 0px 100px; border-radius: 1.5em; ">
+        <h3>Order Now</h3>
+      <div style="margin: 0px 50px 0px 80px;">
+       <form>
+            <p>Order details</p>
+            <label for="fullname"  style="font-size: 12px;">Your Full Name</label>
+            <br>
+            <input id="fullname" type="text" placeholder="Enter Your Full Name" name="fullname" style="border-radius: 0.5em" />
+            <br>
+            <label style="font-size: 12px;">Mobile Number</label>
+            <br>
+            <input type="number" placeholder="Enter Your Mobile Number" style="border-radius: 0.5em;"/>
+            <br>
+            <label style="font-size: 12px;">Email</label>
+            <br>
+            <input type="email" placeholder="Enter Your Email" style="border-radius: 0.5em;"/>
+            <br>
+            <label for="address" style="font-size: 12px;">Address</label>
+            <br>
+            <input id="address" type="text" placeholder="Enter Your Address" name="address" style="border-radius: 0.5em"/>
+            <br>
+            <label style="font-size: 12px;">Pin code</label>
+            <br>
+            <input type="number" placeholder="Enter Your Area Pin code" style="border-radius: 0.5em;"/>
+
+        </form> 
+    
+        <div>
+            <label style="font-size: 12px;">Food Items</label>
+            <br/>
+            <input type="checkbox" style="border-radius: 0.5em"/>
+            <label style="font-size: 12px;">Pizza</label>
+            <input type="checkbox" style="border-radius: 0.5em"/>
+            <label style="font-size: 12px;">Cake</label>
+            <input type="checkbox" style="border-radius: 0.5em"/>
+            <label style="font-size: 12px;">Noddle</label>
+            <input type="checkbox" style="border-radius: 0.5em"/>
+            <label style="font-size: 12px;">Burgar</label>
+            <input type="checkbox" style="border-radius: 0.5em"/>
+            <label style="font-size: 12px;">Pasta</label>
+            <input type="checkbox" style="border-radius: 0.5em"/>
+            <label style="font-size: 12px;">Fired Potato Fingers</label>
+            <input type="checkbox" style="border-radius: 0.5em"/>
+            <label style="font-size: 12px;">Tanduri</label>
+            
+        </div>
+     </div>
+    </div>
+    <div style="background-image: url(home.jpg); background-size: cover; width: auto; height: 500px; margin:40px 100px 40px 100px; border-radius: 1.5em; ">
+      <h3 style="color: lightgray; padding-top: 50px;">Payment Method</h3>
+      <div style="margin: 50px 100px 0px 150px;">
+        <label>Payment Details</label>
+        <br/>
+        <input type="radio" name=""/>
+        <label>Cash on Delivery/Pick-up</label>
+        <br>
+        <input type="radio" name="Payment details"/>
+        <label>Credit Card</label>
+        <br>
+        <input type="radio" name="Payment details"/>
+        <select style="border-radius: 0.5em;">
+           <option value="Other">Other</option>
+           <option value="UPI">UPI</option>
+           <option value="NEFT">NEFT</option>
+           <option value="Google Pay">Google Pay</option>
+           <option value="Phone Pay">Phone Pay</option>
+           <option value="Paytm">Paytm</option>
+         </select>
+         <br>
+         <button type="submit" value="submit" style="border-radius: 0.5em;">Pay Now</button>
+        
+    </div>
+    </div>  
+  </body>
+</html>
