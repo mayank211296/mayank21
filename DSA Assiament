@@ -1,0 +1,79 @@
+Q1. Write a program to find all pairs of an integer array whose sum is equal to a given number?
+Ans.
+  const twoSum = (arr, num) => {
+  let obj = {};
+  let res = [];
+  arr.map((item) => {
+    let com = num - item;
+    if (obj[com]) {
+      res.push([obj[com], item]);
+    } else {
+      obj[item] = item;
+    }
+  });
+  return res;
+};
+let arr = [2, 3, 2, 5, 4, 9, 6, 8, 8, 7];
+let num = 10;
+console.log(twoSum(arr, num));
+
+
+Q2. Write a program to reverse an array in place? In place means you cannot create a new array. You have to update the original array.
+Ans.
+    reverseArray = (arr) => {
+  for (let i = 0; i < arr.length / 2; i++) {
+    [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]];
+  }
+  return arr;
+};
+let arr = ["ab", "bc", "cd", "da"];
+console.log(reverseArray(arr));
+
+Q3. Write a program to check if two strings are a rotation of each other?
+Ans. function rotEq(str1, str2) {
+  var str = str1 + str1;
+  return str.includes(str2);
+}
+console.log(rotEq("abcd", "bcda"));
+console.log(rotEq("abcde", "cdeab"));
+console.log(rotEq("abcd", "acdb"));
+
+
+Q4. Write a program to print the first non-repeated character from a string?
+Ans. 
+  function FirstNotRepeatedChar(str) {
+  var arra1 = str.split('');
+  var result = '';
+  var ctr = 0;
+ 
+  for (var i = 0; i < arra1.length; i++) {
+    ctr = 0;
+ 
+    for (var y = 0; y < arra1.length; y++) 
+    {
+      if (arra1[i] === arra1[y]) {
+        ctr+= 1;
+      }
+    }
+ 
+    if (ctr < 2) {
+      result = arra1[i];
+      break;
+    }
+  }
+  return result;
+}
+console.log(FirstNotRepeatedChar('abacddbec'));
+
+Q5. Read about the Tower of Hanoi algorithm. Write a program to implement it.
+
+Q6. Read about infix, prefix, and postfix expressions. Write a program to convert postfix to prefix expression.
+
+Q7. Write a program to convert prefix expression to infix expression.
+
+Q8. Write a program to check if all the brackets are closed in a given code snippet.
+
+Q9. Write a program to reverse a stack.
+
+Q10. Write a program to find the smallest number using a stack.
+
