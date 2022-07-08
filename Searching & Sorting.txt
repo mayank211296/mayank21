@@ -1,0 +1,196 @@
+Q.1 Implement Binary Search
+
+Ans 
+
+  let recursiveFunction = function (arr, x, start, end) {
+  // Base Condition
+  if (start > end) return false;
+
+  // Find the middle index
+  let mid = Math.floor((start + end) / 2);
+
+  // Compare mid with given key x
+  if (arr[mid] === x) return true;
+
+  // If element at mid is greater than x,
+  // search in the left half of mid
+  if (arr[mid] > x) 
+    return recursiveFunction(arr, x, start, mid - 1);
+  // If element at mid is smaller than x,
+  // search in the right half of mid
+  else return recursiveFunction(arr, x, mid + 1, end);
+};
+
+// Driver code
+let arr = [1, 3, 5, 7, 8, 9];
+let x = 5;
+
+if (recursiveFunction(arr, x, 0, arr.length - 1)) 
+console.log("Element found!");
+else console.log("Element not found!");
+
+x = 6;
+
+if (recursiveFunction(arr, x, 0, arr.length - 1)) 
+console.log("Element found!");
+else console.log("Element not found!");
+
+
+Q.2 Implement Merge Sort
+Ans  
+    function merge(arr, l, m, r) {
+  var n1 = m - l + 1;
+  var n2 = r - m;
+
+  // Create temp arrays
+  var L = new Array(n1);
+  var R = new Array(n2);
+
+  // Copy data to temp arrays L[] and R[]
+  for (var i = 0; i < n1; i++) L[i] = arr[l + i];
+  for (var j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
+
+  // Merge the temp arrays back into arr[l..r]
+
+  // Initial index of first subarray
+  var i = 0;
+
+  // Initial index of second subarray
+  var j = 0;
+
+  // Initial index of merged subarray
+  var k = l;
+
+  while (i < n1 && j < n2) {
+    if (L[i] <= R[j]) {
+      arr[k] = L[i];
+      i++;
+    } else {
+      arr[k] = R[j];
+      j++;
+    }
+    k++;
+  }
+
+  // Copy the remaining elements of
+  // L[], if there are any
+  while (i < n1) {
+    arr[k] = L[i];
+    i++;
+    k++;
+  }
+
+  // Copy the remaining elements of
+  // R[], if there are any
+  while (j < n2) {
+    arr[k] = R[j];
+    j++;
+    k++;
+  }
+}
+
+// l is for left index and r is
+// right index of the sub-array
+// of arr to be sorted */
+function mergeSort(arr, l, r) {
+  if (l >= r) {
+    return; //returns recursively
+  }
+  var m = l + parseInt((r - l) / 2);
+  mergeSort(arr, l, m);
+  mergeSort(arr, m + 1, r);
+  merge(arr, l, m, r);
+}
+
+// UTILITY FUNCTIONS
+// Function to print an array
+function printArray(A, size) {
+  for (var i = 0; i < size; i++) console.log(A[i] + " ");
+}
+
+var arr = [12, 11, 13, 5, 6, 7];
+var arr_size = arr.length;
+
+console.log("Given array is <br>");
+printArray(arr, arr_size);
+
+mergeSort(arr, 0, arr_size - 1);
+
+console.log("<br>Sorted array is <br>");
+printArray(arr, arr_size);
+ 
+  
+Q.3  Implement Quick Sort
+Ans. 
+    function quickSort(originalArr) {
+  if (originalArr.length <= 1) {
+    return originalArr;
+  } else {
+    var leftArr = [];
+    var rightArr = [];
+    var newArr = [];
+    var pivot = originalArr.pop();
+    var length = originalArr.length;
+    for (var i = 0; i < length; i++) {
+      if (originalArr[i] <= pivot) {
+        leftArr.push(originalArr[i]);
+      } else {
+        rightArr.push(originalArr[i]);
+      }
+    }
+    return newArr.concat(quickSort(leftArr), pivot, quickSort(rightArr)); 
+  }
+}
+var myArray = [9, 0, 2, 7, -2, 6, 1];
+console.log("Original array: " + myArray);
+var sortedArray = quickSort(myArray);
+console.log("Sorted array: " + sortedArray);
+
+
+Q.4 Implement Insertion Sort
+
+Ans. 
+     function insertionSort(inputArr) {
+  let n = inputArr.length;
+  for (let i = 1; i < n; i++) {
+    // Choosing the first element in our unsorted subarray
+    let current = inputArr[i];
+    // The last element of our sorted subarray
+    let j = i - 1;
+    while (j > -1 && current < inputArr[j]) {
+      inputArr[j + 1] = inputArr[j];
+      j--;
+    }
+    inputArr[j + 1] = current;
+  }
+  return inputArr;
+}
+let inputArr = [5, 2, 4, 6, 1, 3];
+insertionSort(inputArr);
+console.log(inputArr);
+
+Q.5 Write a program to sort list of strings (similar to that of dictionary)
+Ans 
+    function sortString(strArray) {
+  var i = 0;
+  var j;
+  while (i < strArray.length) {
+    j = i + 1;
+    while (j < strArray.length) {
+      if (strArray[j] < strArray[i]) {
+        var tempStr = strArray[i];
+        strArray[i] = strArray[j];
+        strArray[j] = tempStr;
+      }
+      j++;
+    }
+    i++;
+  }
+}
+var sortArray = ["Karthik", "Saideep", "Balu", "Shweta", "Divya", "Bhanu"];
+console.log("Original Array of strings</br>");
+console.log(sortArray);
+console.log("</br>");
+sortString(sortArray);
+console.log("</br>Array of strings After sorting</br>");
+console.log(sortArray);
